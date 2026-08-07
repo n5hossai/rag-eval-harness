@@ -1,0 +1,32 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Generated data (reproducible from `ragx build`) ---
+data/raw/
+data/processed/
+indexes/
+
+# --- Model caches ---
+.cache/
+models/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# NOTE: data/golden/ and results/ are intentionally COMMITTED.
+# The golden set is hand-authored (not reproducible) and the results are the
+# evidence behind every number in the README.
