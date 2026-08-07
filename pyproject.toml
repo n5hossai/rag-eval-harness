@@ -1,0 +1,32 @@
+[build-system]
+# How pip should build this project. setuptools is the standard, boring choice.
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ragx"
+version = "0.1.0"
+description = "Evaluation harness for retrieval-augmented generation over 14 CFR"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+# Runtime dependencies. Deliberately minimal: a library earns its place here by
+# being needed, not by being conventional.
+dependencies = [
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+# Installed with: pip install -e ".[dev]"
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.setuptools.packages.find]
+# THE src/ LAYOUT. Look for packages inside src/, not at the repo root.
+# This is what makes `import ragx` resolve only via the install.
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
